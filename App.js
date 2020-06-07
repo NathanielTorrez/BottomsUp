@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Picker, ScrollView } from 'react-native';
 import Alcohol from './Alcohol.js';
 import Ingredients from './Ingredients.js';
 import ShowButton from './ShowButton.js';
@@ -62,13 +62,13 @@ class App extends React.Component {
     }
     if (this.state.page === 'results') {
       currentPage = (
-        <View style={tailwind('bg-gray-900 flex-auto')}>
+        <ScrollView style={tailwind('bg-gray-900 flex-auto')}>
           <DrinkPage
             alcohol={this.state.alcohol}
             drinks={this.state.drinks}
             changePage={this.changePage}
           />
-        </View>
+        </ScrollView>
       );
     }
     return currentPage;
