@@ -53,17 +53,16 @@ class App extends React.Component {
     let currentPage;
     if (this.state.page === 'home') {
       currentPage = (
-        <View style={tailwind('bg-gray-800 flex-auto content-center items-center')}>
-          <Text style={tailwind('mt-10 text-6xl text-yellow-500')}>Bottoms Up!</Text>
+        <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
+          <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
           <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
           <ShowButton changePage={this.changePage} />
-          <Text>{this.state.alcohol}</Text>
         </View>
       );
     }
     if (this.state.page === 'results') {
       currentPage = (
-        <View style={tailwind('bg-gray-800 flex-auto')}>
+        <View style={tailwind('bg-gray-900 flex-auto')}>
           <DrinkPage
             alcohol={this.state.alcohol}
             drinks={this.state.drinks}
