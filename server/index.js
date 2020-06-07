@@ -23,12 +23,32 @@ app.get('/', (req, res) => {
 });
 
 app.get('/drink', (req, res) => {
-  const drinkRequest = req.query.drink;
+  const drinkRequest = req.query.id;
+  console.log(drinkRequest);
   axios
-    .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkRequest}`)
+    .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkRequest}`)
     .then((results) => {
       const drinks = results.data.drinks[0];
-      res.send(drinks);
+      const drink = {};
+      const ingredients = [];
+      const measurements = [];
+
+      for (var i = 1; i < 15; i++) {
+        if (drinks[`strIngredient${i}`] !== null) {
+          ingredients.push(drinks[`strIngredient${i}`]);
+        }
+        if (drinks[`strMeasure${i}`] !== null) {
+          measurements.push(drinks[`strMeasure${i}`]);
+        }
+      }
+      drink.ingredients = ingredients;
+      drink.measurements = measurements;
+      drink.instructions = drinks.strInstructions;
+      drink.image = drinks.strDrinkThumb;
+      drink.name = drinks.strDrink;
+      console.log(drink);
+      res.status(200);
+      res.send(drink);
     })
     .catch((err) => {
       console.log('error');
