@@ -9,7 +9,9 @@ const port = 3000;
 app.use(bodyParser.json());
 //================== Routes ==============================
 app.get('/', (req, res) => {
-  const drinkRequest = req.body.drink;
+  const drinkRequest = req.query.drink;
+  console.log(drinkRequest);
+
   axios
     .get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drinkRequest}`)
     .then((results) => {
@@ -17,7 +19,7 @@ app.get('/', (req, res) => {
       res.send(drinks);
     })
     .catch((err) => {
-      console.log(err);
+      console.log('error');
       res.send(err);
     });
 });

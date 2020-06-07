@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Picker } from 'react-native';
+import Alcohol from './Alcohol.js';
+import Ingredients from './Ingredients.js';
+import ShowButton from './ShowButton.js';
+import DrinkPage from './DrinkPage.js';
+import axios from 'axios';
 
 import tailwind from 'tailwind-rn';
 
@@ -8,41 +13,66 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      page: '',
+      page: 'home',
+      alcohol: '',
+      drinks: [],
     };
     this.changePage = this.changePage.bind(this);
+    this.selectAlcohol = this.selectAlcohol.bind(this);
   }
 
   changePage = (e) => {
     e.preventDefault();
+
+    axios.get('http://127.0.0.1:3000', { params: { drink: this.state.alcohol } }).then((res) => {
+      const drinks = res.data;
+      console.log(drinks[0].idDrink);
+      this.setState({
+        drinks: drinks,
+      });
+    });
+    const { page } = this.state;
+    if (page === 'results') {
+      this.setState({
+        page: 'home',
+      });
+    } else {
+      this.setState({
+        page: 'results',
+      });
+    }
+  };
+
+  selectAlcohol = (itemValue) => {
     this.setState({
-      page: e.tar,
+      alcohol: itemValue,
     });
   };
 
   render() {
-    return (
-      <View style={tailwind('bg-gray-800')}>
-        <Text style={tailwind('mt-6 text-center text-3xl text-yellow-500')}>Bottoms Up!</Text>
-        <Text style={tailwind('mt-6 text-center text-xl text-yellow-500')}>Pick your sauce</Text>
-        <Picker>
-          <Picker.item label="Whiskey" value="Whiskey" />
-          <Picker.item label="Rum" value="Rum" />
-          <Picker.item label="Vodka" value="Vodka" />
-          <Picker.item label="Tequilla" value="Tequilla" />
-          <Picker.item label="Gin" value="Gin" />
-        </Picker>
-        <Text style={tailwind('mt-6 text-center text-xl text-yellow-500')}>Pick your juice</Text>
-        <Picker>
-          <Picker.item label="Pineapple" value="Pineapple" />
-          <Picker.item label="Orange" value="Orange" />
-          <Picker.item label="Triple Sec" value="Triple Sec" />
-          <Picker.item label="Bitters" value="Bitters" />
-          <Picker.item label="Simple Syrup" value="Simple Syrup" />
-        </Picker>
-        <Button color="#ecc94b" title="show me the drinks" onPress={this.changePage} />
-      </View>
-    );
+    let currentPage;
+    if (this.state.page === 'home') {
+      currentPage = (
+        <View style={tailwind('bg-gray-800 flex-auto content-center items-center')}>
+          <Text style={tailwind('mt-10 text-6xl text-yellow-500')}>Bottoms Up!</Text>
+          <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+          <ShowButton changePage={this.changePage} />
+          <Text>{this.state.alcohol}</Text>
+        </View>
+      );
+    }
+    if (this.state.page === 'results') {
+      currentPage = (
+        <View style={tailwind('bg-gray-800 flex-auto')}>
+          <DrinkPage
+            alcohol={this.state.alcohol}
+            drinks={this.state.drinks}
+            changePage={this.changePage}
+          />
+        </View>
+      );
+    }
+    return currentPage;
   }
 }
 export default App;
