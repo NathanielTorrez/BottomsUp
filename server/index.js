@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+const db = require('../database/index.js');
 
 // =================== MiddleWare =========================
 app.use(bodyParser.json());
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
     });
 });
 
+//=================== Get Individual drink by id ==================
 app.get('/drink', (req, res) => {
   const drinkRequest = req.query.id;
   console.log(drinkRequest);
@@ -41,11 +43,13 @@ app.get('/drink', (req, res) => {
           measurements.push(drinks[`strMeasure${i}`]);
         }
       }
+
       drink.ingredients = ingredients;
       drink.measurements = measurements;
       drink.instructions = drinks.strInstructions;
       drink.image = drinks.strDrinkThumb;
       drink.name = drinks.strDrink;
+
       console.log(drink);
       res.status(200);
       res.send(drink);
@@ -56,6 +60,7 @@ app.get('/drink', (req, res) => {
     });
 });
 
+//=================== Get drink list with multi-ingredients==================
 app.get('/mixer', (req, res) => {
   const drink = req.query.drink;
   const mixer = req.query.mixer;
