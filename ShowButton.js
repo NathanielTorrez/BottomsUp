@@ -14,9 +14,9 @@ function ShowButton({ changePage }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#718096',
+    backgroundColor: '#4a5568',
     borderRadius: 25,
-    width: 390,
+    width: 370,
   },
   buttonText: {
     color: '#ecc94b',

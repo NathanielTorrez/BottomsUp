@@ -3,7 +3,7 @@ import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import tailwind from 'tailwind-rn';
 import Entry from './Entry.js';
 
-function DrinkPage({ drinks, changeToHomePage, changeToRecipePage, updateRecipe }) {
+function DrinkPage({ drinks, changeToHomePage, changeToRecipePage, updateRecipe, backTodrinks }) {
   return (
     <View>
       <TouchableOpacity style={styles.opacity} onPress={changeToHomePage}>
@@ -18,6 +18,7 @@ function DrinkPage({ drinks, changeToHomePage, changeToRecipePage, updateRecipe 
           changeToRecipePage={changeToRecipePage}
           idNum={drink.idDrink}
           updateRecipe={updateRecipe}
+          backTodrinks={backTodrinks}
         />
       ))}
     </View>
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     width: 300,
   },
   buttonText: {
-    color: '#718096',
+    color: '#1a202c',
     textAlign: 'center',
     fontSize: 30,
   },

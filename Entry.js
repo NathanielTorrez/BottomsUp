@@ -40,7 +40,6 @@ class Entry extends React.Component {
             <Text style={tailwind('text-2xl ml-2 text-center flex-row flex-wrap text-yellow-500')}>
               {this.props.name}
             </Text>
-            <Text>{this.props.idNum}</Text>
           </View>
         </View>
       </TouchableOpacity>

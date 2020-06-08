@@ -14,7 +14,7 @@ class App extends React.Component {
 
     this.state = {
       page: 'home',
-      alcohol: '',
+      alcohol: 'whiskey',
       drinks: [],
       id: '',
       recipe: {},
@@ -24,7 +24,14 @@ class App extends React.Component {
     this.changeToRecipePage = this.changeToRecipePage.bind(this);
     this.selectAlcohol = this.selectAlcohol.bind(this);
     this.updateRecipe = this.updateRecipe.bind(this);
+    this.backToDrinks = this.backToDrinks.bind(this);
   }
+
+  backToDrinks = () => {
+    this.setState({
+      page: 'drinks',
+    });
+  };
 
   changeToDrinksPage = (e) => {
     axios.get('http://127.0.0.1:3000', { params: { drink: this.state.alcohol } }).then((res) => {
@@ -33,14 +40,13 @@ class App extends React.Component {
         drinks: drinks,
       });
     });
-    this.setState({
-      page: 'drinks',
-    });
+    this.backToDrinks();
   };
 
   changeToHomePage = (e) => {
     this.setState({
       page: 'home',
+      drinks: [],
     });
   };
 
@@ -89,6 +95,7 @@ class App extends React.Component {
       currentPage = (
         <View style={tailwind('bg-gray-900 flex-auto')}>
           <Recipe
+            backToDrinks={this.backToDrinks}
             instructions={this.state.recipe.instructions}
             measurements={this.state.recipe.measurements}
             ingredients={this.state.recipe.ingredients}
