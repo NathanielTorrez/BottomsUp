@@ -56,6 +56,24 @@ app.get('/drink', (req, res) => {
     });
 });
 
+app.get('/mixer', (req, res) => {
+  const drink = req.query.drink;
+  const mixer = req.query.mixer;
+
+  axios
+    .get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${drink},${mixer}`)
+    .then((results) => {
+      const drinks = results.data.drinks;
+      console.log(drinks);
+      res.status(200);
+      res.send(drinks);
+    })
+    .catch((err) => {
+      console.log('error');
+      res.send(err);
+    });
+});
+
 // ====================== Listen on this port ==============
 app.listen(port, (err) => {
   if (err) {

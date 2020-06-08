@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Picker } from 'react-native';
 import tailwind from 'tailwind-rn';
 
-function Ingredients() {
+function Ingredients({ selectMixer, mixer }) {
   let ingredientList = [
     'Triple_sec',
     'Orange_bitters',
@@ -47,7 +47,7 @@ function Ingredients() {
   return (
     <View>
       <Text style={tailwind('mt-6 text-center text-4xl text-yellow-500')}>Pick your mixer</Text>
-      <Picker>
+      <Picker selectedValue={mixer} onValueChange={selectMixer}>
         {ingredientList.map((ingredient) => (
           <Picker.item label={ingredient.split('_').join(' ')} value={ingredient} />
         ))}

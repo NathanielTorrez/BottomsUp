@@ -4,25 +4,29 @@ import tailwind from 'tailwind-rn';
 import Entry from './Entry.js';
 
 function DrinkPage({ drinks, changeToHomePage, changeToRecipePage, updateRecipe, backTodrinks }) {
-  return (
-    <View>
-      <TouchableOpacity style={styles.opacity} onPress={changeToHomePage}>
-        <View styles={styles.button}>
-          <Text style={styles.buttonText}>Try Something Else</Text>
-        </View>
-      </TouchableOpacity>
-      {drinks.map((drink) => (
-        <Entry
-          image={drink.strDrinkThumb}
-          name={drink.strDrink}
-          changeToRecipePage={changeToRecipePage}
-          idNum={drink.idDrink}
-          updateRecipe={updateRecipe}
-          backTodrinks={backTodrinks}
-        />
-      ))}
-    </View>
-  );
+  if (drinks.length < 1) {
+    return <View></View>;
+  } else {
+    return (
+      <View>
+        <TouchableOpacity style={styles.opacity} onPress={changeToHomePage}>
+          <View styles={styles.button}>
+            <Text style={styles.buttonText}>Try Something Else</Text>
+          </View>
+        </TouchableOpacity>
+        {drinks.map((drink) => (
+          <Entry
+            image={drink.strDrinkThumb}
+            name={drink.strDrink}
+            changeToRecipePage={changeToRecipePage}
+            idNum={drink.idDrink}
+            updateRecipe={updateRecipe}
+            backTodrinks={backTodrinks}
+          />
+        ))}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
