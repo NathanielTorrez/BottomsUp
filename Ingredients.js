@@ -3,15 +3,54 @@ import { Text, View, Picker } from 'react-native';
 import tailwind from 'tailwind-rn';
 
 function Ingredients() {
+  let ingredientList = [
+    'Triple_sec',
+    'Orange_bitters',
+    'Tea',
+    'Bitters',
+    'Sugar',
+    'demerara_Sugar',
+    'Carbonated_water',
+    'Grenadine',
+    'Grapefruit_juice',
+    'Apple_juice',
+    'Pineapple_juice',
+    'Lemon_juice',
+    'Sugar_syrup',
+    'Milk',
+    'Strawberries',
+    'Chocolate_syrup',
+    'Yoghurt',
+    'Mango',
+    'Ginger',
+    'Lime',
+    'Cantaloupe',
+    'Berries',
+    'Grapes',
+    'Kiwi',
+    'Tomato_juice',
+    'Cocoa_powder',
+    'Chocolate',
+    'Heavy_cream',
+    'Coffee',
+    'Orange',
+    'Cranberries',
+    'Apple_cider',
+    'Cranberry_juice',
+    'Lemon',
+    'Lemonade',
+    'Sprite',
+    '7-Up',
+  ];
+  // alphabetically sort
+  ingredientList = ingredientList.sort();
   return (
     <View>
-      <Text style={tailwind('mt-6 text-center text-xl text-yellow-500')}>Pick your juice</Text>
+      <Text style={tailwind('mt-6 text-center text-4xl text-yellow-500')}>Pick your mixer</Text>
       <Picker>
-        <Picker.item label="Pineapple" value="Pineapple" />
-        <Picker.item label="Orange" value="Orange" />
-        <Picker.item label="Triple Sec" value="Triple Sec" />
-        <Picker.item label="Bitters" value="Bitters" />
-        <Picker.item label="Simple Syrup" value="Simple Syrup" />
+        {ingredientList.map((ingredient) => (
+          <Picker.item label={ingredient.split('_').join(' ')} value={ingredient} />
+        ))}
       </Picker>
     </View>
   );

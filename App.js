@@ -18,6 +18,8 @@ class App extends React.Component {
       drinks: [],
       id: '',
       recipe: {},
+      addingMixer: true,
+      mixer: '7-up',
     };
     this.changeToDrinksPage = this.changeToDrinksPage.bind(this);
     this.changeToHomePage = this.changeToHomePage.bind(this);
@@ -70,15 +72,31 @@ class App extends React.Component {
 
   render() {
     let { page } = this.state;
+    let { addingMixer } = this.state;
     let currentPage;
     if (page === 'home') {
-      currentPage = (
-        <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
-          <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
-          <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
-          <ShowButton changePage={this.changeToDrinksPage} />
-        </View>
-      );
+      if (addingMixer) {
+        currentPage = (
+          <ScrollView>
+            <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
+              <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
+              <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+              <Ingredients ingredient={this.state.mixer} />
+              <ShowButton changePage={this.changeToDrinksPage} />
+            </View>
+          </ScrollView>
+        );
+      } else {
+        currentPage = (
+          <ScrollView>
+            <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
+              <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
+              <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+              <ShowButton changePage={this.changeToDrinksPage} />
+            </View>
+          </ScrollView>
+        );
+      }
     } else if (page === 'drinks') {
       currentPage = (
         <ScrollView style={tailwind('bg-gray-900 flex-auto')}>

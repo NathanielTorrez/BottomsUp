@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   opacity: {
     marginTop: 50,
+    marginBottom: 50,
   },
 });
 
