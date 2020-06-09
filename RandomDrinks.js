@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import tailwind from 'tailwind-rn';
 
-function AddMixer({ addingMixer }) {
+function RandomDrinks({ getRandomDrinks }) {
   return (
     <View>
-      <TouchableOpacity onPress={addingMixer} style={styles.opacity}>
+      <TouchableOpacity style={styles.opacity} onPress={getRandomDrinks}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Tap to add mixer?</Text>
+          <Text style={styles.buttonText}>Random Drinks</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -30,11 +30,8 @@ const styles = StyleSheet.create({
   opacity: {
     marginTop: 150,
     marginBottom: 10,
-    marginLeft: 0,
-    marginRight: 0,
     height: 95,
     width: 95,
   },
 });
-
-export default AddMixer;
+export default RandomDrinks;
