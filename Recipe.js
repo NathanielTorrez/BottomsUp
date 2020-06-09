@@ -10,7 +10,7 @@ function Recipe(props) {
           <Text style={styles.buttonText}>Back To Drinks</Text>
         </View>
       </TouchableOpacity>
-      <View style={tailwind('bg-gray-800 flex-auto flex-col mt-5 mb-20 ml-2 mr-2')}>
+      <View style={tailwind('bg-orange-500 flex-auto flex-col mt-5 mb-20 ml-2 mr-2')}>
         <View style={tailwind('flex-row')}>
           <View>
             <View style={tailwind('border border-yellow-500 mb-2')}>
@@ -20,11 +20,11 @@ function Recipe(props) {
           <View
             style={tailwind('mt-10 ml-8 text-center content-center items-center flex-wrap w-1/2')}
           >
-            <Text style={tailwind('text-3xl flex-wrap text-yellow-500')}>{props.name}</Text>
+            <Text style={tailwind('text-3xl flex-wrap text-gray-400 ')}>{props.name}</Text>
           </View>
         </View>
         <View style={tailwind('mb-3')}>
-          <Text style={tailwind('text-2xl mb-2 text-yellow-500')}>Instructions:</Text>
+          <Text style={tailwind('text-2xl mb-2 text-gray-200 underline')}>Instructions:</Text>
           <Text style={tailwind('text-lg text-white')}>{props.instructions}</Text>
         </View>
         <View style={tailwind('mt-10 flex-row flex-wrap justify-between')}>
@@ -46,8 +46,8 @@ function Recipe(props) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 120,
-    height: 120,
+    width: 160,
+    height: 160,
   },
   logo: {
     width: 66,

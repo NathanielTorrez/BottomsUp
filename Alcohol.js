@@ -86,7 +86,7 @@ function Alcohol({ selectAlcohol, alcohol }) {
 
   return (
     <View>
-      <Text style={tailwind('mt-10 text-4xl text-yellow-500')}>Pick your sauce</Text>
+      <Text style={tailwind('mt-10 text-4xl text-orange-500')}>Pick your sauce:</Text>
       <Picker selectedValue={alcohol} onValueChange={selectAlcohol}>
         {liquorList.map((liqour) => (
           <Picker.item label={liqour.split('_').join(' ')} value={liqour} />
