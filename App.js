@@ -21,6 +21,8 @@ import Recipe from './Recipe.js';
 import axios from 'axios';
 import tailwind from 'tailwind-rn';
 
+console.disableYellowBox = true;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -59,7 +61,7 @@ class App extends React.Component {
     let { addingMixer } = this.state;
     if (addingMixer) {
       axios
-        .get('http://127.0.0.1:3000/mixer', {
+        .get('http://50.18.218.159:3000/mixer', {
           params: { drink: this.state.alcohol, mixer: this.state.mixer },
         })
         .then((res) => {
@@ -84,7 +86,7 @@ class App extends React.Component {
         });
     } else {
       axios
-        .get('http://127.0.0.1:3000', { params: { drink: this.state.alcohol } })
+        .get('http://50.18.218.159:3000', { params: { drink: this.state.alcohol } })
         .then((res) => {
           const drinks = res.data;
           if (typeof drinks !== 'object') {
@@ -126,7 +128,7 @@ class App extends React.Component {
 
   getRandomDrinks = () => {
     axios
-      .get('http://127.0.0.1:3000/random')
+      .get('http://50.18.218.159:3000/random')
       .then((res) => {
         const drinks = res.data;
         this.setState({
@@ -146,7 +148,7 @@ class App extends React.Component {
   // ========== Get Popular Drinks from api =========
   getPopularDrinks = () => {
     axios
-      .get('http://127.0.0.1:3000/popular')
+      .get('http://50.18.218.159:3000/popular')
       .then((res) => {
         const drinks = res.data;
         this.setState({
@@ -222,7 +224,7 @@ class App extends React.Component {
               </View>
               <View
                 style={tailwind(
-                  'bg-orange-200 flex-auto flex-row content-start items-start w-full '
+                  'bg-orange-200 flex-auto justify-center flex-row content-start items-start w-full '
                 )}
               >
                 <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
@@ -242,7 +244,7 @@ class App extends React.Component {
               </View>
               <View
                 style={tailwind(
-                  'bg-orange-200 flex-auto flex-row content-start items-start w-full '
+                  'bg-orange-200 flex-auto justify-center flex-row content-center items-center'
                 )}
               >
                 <AddMixer addingMixer={this.addingMixer} />

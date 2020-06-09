@@ -4,13 +4,11 @@ import tailwind from 'tailwind-rn';
 
 function RandomDrinks({ getRandomDrinks }) {
   return (
-    <View>
-      <TouchableOpacity style={styles.opacity} onPress={getRandomDrinks}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Random Drinks</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.opacity} onPress={getRandomDrinks}>
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>Random Drinks</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 

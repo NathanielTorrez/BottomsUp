@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   opacity: {
-    marginTop: 30,
+    marginTop: 40,
     borderRadius: 25,
     display: 'flex',
     alignItems: 'center',

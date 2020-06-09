@@ -46,7 +46,7 @@ function Ingredients({ selectMixer, mixer }) {
   ingredientList = ingredientList.sort();
   return (
     <View>
-      <Text style={tailwind('mt-6 text-center text-4xl text-yellow-500')}>Pick your mixer</Text>
+      <Text style={tailwind('mt-6 text-center text-4xl text-orange-500')}>Pick your mixer:</Text>
       <Picker selectedValue={mixer} onValueChange={selectMixer}>
         {ingredientList.map((ingredient) => (
           <Picker.item label={ingredient.split('_').join(' ')} value={ingredient} />

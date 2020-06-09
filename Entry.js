@@ -14,7 +14,7 @@ class Entry extends React.Component {
 
   changeDisplayDrink = (e) => {
     axios
-      .get('http://127.0.0.1:3000/drink', { params: { id: this.state.idNum } })
+      .get('http://50.18.218.159:3000/drink', { params: { id: this.state.idNum } })
       .then((res) => {
         const recipe = res.data;
         this.props.updateRecipe(recipe);
