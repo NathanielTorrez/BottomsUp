@@ -29,15 +29,13 @@ class Entry extends React.Component {
     return (
       <TouchableOpacity onPress={this.changeDisplayDrink}>
         <View
-          style={tailwind(
-            'flex-row mb-5 text-center content-center items-center border border-black bg-gray-800'
-          )}
+          style={tailwind('flex-row mb-3 text-center content-center items-center bg-orange-500')}
         >
           <View>
             <Image style={styles.image} source={{ uri: this.props.image }} />
           </View>
           <View style={tailwind('text-center content-center items-center flex-wrap w-3/4')}>
-            <Text style={tailwind('text-2xl ml-2 text-center flex-row flex-wrap text-yellow-500')}>
+            <Text style={tailwind('text-2xl ml-2 text-center flex-row flex-wrap text-gray-200')}>
               {this.props.name}
             </Text>
           </View>
@@ -48,8 +46,8 @@ class Entry extends React.Component {
 }
 const styles = StyleSheet.create({
   image: {
-    width: 98,
-    height: 98,
+    width: 100,
+    height: 100,
     marginBottom: 3,
     marginTop: 3,
   },

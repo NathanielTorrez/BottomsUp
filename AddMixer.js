@@ -7,7 +7,7 @@ function AddMixer({ addingMixer }) {
     <View>
       <TouchableOpacity onPress={addingMixer} style={styles.opacity}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Tap to add mixer?</Text>
+          <Text style={styles.buttonText}>Add Mixer!</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -16,16 +16,16 @@ function AddMixer({ addingMixer }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4a5568',
+    backgroundColor: '#e98074',
     borderRadius: 25,
     height: 92,
     width: 92,
   },
   buttonText: {
-    color: '#ecc94b',
+    color: '#eae7dc',
     textAlign: 'center',
     fontSize: 16,
-    marginTop: 23,
+    marginTop: 30,
   },
   opacity: {
     marginTop: 150,

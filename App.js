@@ -204,7 +204,7 @@ class App extends React.Component {
 
     if (this.state.noResults) {
       currentPage = (
-        <View style={tailwind('bg-gray-800 flex-auto content-center text-center items-center')}>
+        <View style={tailwind('bg-gray-200 flex-auto content-center text-center items-center')}>
           <NoResults changeToHomePage={this.changeToHomePage} />
         </View>
       );
@@ -212,14 +212,18 @@ class App extends React.Component {
       if (page === 'home') {
         if (addingMixer) {
           currentPage = (
-            <ScrollView style={tailwind('bg-gray-800 flex-auto')}>
-              <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
-                <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
+            <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
+              <View style={tailwind('bg-orange-200  flex-auto content-center items-center')}>
+                <Text style={tailwind('mt-10 text-6xl text-orange-500 underline ')}>
+                  Bottoms Up!
+                </Text>
                 <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
                 <Ingredients selectMixer={this.selectMixer} mixer={this.state.mixer} />
               </View>
               <View
-                style={tailwind('bg-gray-800 flex-auto flex-row content-start items-start w-full ')}
+                style={tailwind(
+                  'bg-orange-200 flex-auto flex-row content-start items-start w-full '
+                )}
               >
                 <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
                 <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
@@ -229,13 +233,17 @@ class App extends React.Component {
           );
         } else {
           currentPage = (
-            <ScrollView style={tailwind('bg-gray-800 flex-auto')}>
-              <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
-                <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
+            <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
+              <View style={tailwind('bg-orange-200  flex-auto content-center items-center')}>
+                <Text style={tailwind('mt-10 text-6xl text-orange-500 underline')}>
+                  Bottoms Up!
+                </Text>
                 <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
               </View>
               <View
-                style={tailwind('bg-gray-800 flex-auto flex-row content-start items-start w-full ')}
+                style={tailwind(
+                  'bg-orange-200 flex-auto flex-row content-start items-start w-full '
+                )}
               >
                 <AddMixer addingMixer={this.addingMixer} />
                 <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
@@ -247,7 +255,7 @@ class App extends React.Component {
         }
       } else if (page === 'drinks') {
         currentPage = (
-          <ScrollView style={tailwind('bg-gray-900 flex-auto')}>
+          <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
             <DrinkPage
               alcohol={this.state.alcohol}
               drinks={this.state.drinks}
@@ -259,7 +267,7 @@ class App extends React.Component {
         );
       } else if (page === 'recipe') {
         currentPage = (
-          <View style={tailwind('bg-gray-900 flex-auto')}>
+          <View style={tailwind('bg-orange-500 flex-auto')}>
             <Recipe
               backToDrinks={this.backToDrinks}
               instructions={this.state.recipe.instructions}

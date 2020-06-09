@@ -14,14 +14,14 @@ function PopularDrinks({ getPopularDrinks }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#4a5568',
+    backgroundColor: '#e98074',
     borderRadius: 25,
     height: 92,
     width: 92,
     alignItems: 'center',
   },
   buttonText: {
-    color: '#ecc94b',
+    color: '#eae7dc',
     textAlign: 'center',
     fontSize: 16,
     marginTop: 23,

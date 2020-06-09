@@ -33,18 +33,19 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#ecc94b',
     borderRadius: 25,
-    width: 300,
+    width: 100,
   },
   buttonText: {
     color: '#1a202c',
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 18,
   },
   opacity: {
-    marginTop: 50,
-    marginBottom: 30,
+    marginTop: 30,
+    marginBottom: 15,
     backgroundColor: '#ecc94b',
     borderRadius: 25,
+    width: 100,
   },
 });
 
