@@ -1,0 +1,344 @@
+110 in the shade,4
+155 Belmont,5
+252,3
+24k nightmare,4
+3 Wise Men,2
+410 Gone,1
+3-Mile Long Island Iced Tea,5
+501 Blue,5
+50/50,3
+747,1
+A. J.,1
+747 Drink,1
+A1,4
+ABC,1
+Ace,5
+Abilene,5
+Adam,2
+Affair,3
+Afterglow,3
+Affinity,1
+Afternoon,3
+Alexander,4
+Algonquin,1
+Allegheny,2
+Addison,2
+Almeria,3
+Apello,4
+Applecar,5
+Autodafé,4
+Avalon,5
+Aviation,1
+Artillery,3
+B-52,4
+B-53,4
+Balmoral,4
+Barracuda,1
+Bellini,4
+Bible Belt,5
+Big Red,4
+Bijou,3
+Blackthorn,3
+Bloody Mary,3
+Blue Lagoon,5
+Bluebird,3
+Bob Marley,5
+Boomerang,4
+Bora Bora,3
+Boston Sour,4
+Boxcar,1
+Brain Fart,1
+Bramble,2
+Brandy Flip,1
+Brigadier,3
+Broadside,2
+Brooklyn,3
+Bubble Gum,4
+Buccaneer,4
+Cafe Savoy,1
+Caipirinha,5
+Caipirissima,4
+Campari Beer,1
+Casa Blanca,1
+Casino,2
+Casino Royale,5
+Cherry Rum,2
+Chicago Fizz,5
+Chocolate Drink,3
+Chocolate Milk,1
+Citrus Coke,4
+City Slicker,1
+Clove Cocktail,3
+Clover Club,3
+Coffee Liqueur,3
+Coffee-Vodka,2
+Coke and Drops,1
+Corn n Oil,5
+Cosmopolitan,4
+Cranberry Punch,5
+Cream Soda,2
+Creme de Menthe,5
+Cuba Libra,4
+Cuba Libre,4
+Daiquiri,3
+Damned if you do,3
+Danbooka,5
+Dark Caipirinha,3
+Dark and Stormy,2
+Darkwood Sling,3
+Derby,3
+Diesel,4
+Dirty Martini,3
+Dirty Nipple,5
+Downshift,5
+Dragonfly,2
+Drinking Chocolate,5
+Dry Martini,1
+Dubonnet Cocktail,3
+Dry Rob Roy,1
+Duchamp's Punch,1
+Egg-Nog - Classic Cooked,5
+Egg Cream,3
+Egg Nog #4,2
+Egg Nog - Healthy,5
+Empellón Cocina's Fat-Washed Mezcal,1
+English Highball,2
+Espresso Martini,1
+English Rose Cocktail,5
+Fahrenheit 5000,1
+Espresso Rumtini,2
+Flaming Dr. Pepper,1
+Flander's Flake-Out,2
+Flaming Lamborghini,4
+Flying Scotchman,1
+Flying Dutchman,2
+Frappé,3
+Foxy Lady,2
+French "75",1
+French Connection,5
+French 75,3
+Freddy Kruger,3
+French Martini,1
+French Negroni,1
+Frisco Sour,4
+Frozen Daiquiri,2
+Frozen Mint Daiquiri,1
+Frozen Pineapple Daiquiri,2
+Fruit Cooler,2
+Fruit Flip-Flop,5
+Fruit Shake,4
+GG,4
+Gagliardo,5
+Gimlet,4
+Gin Daisy,3
+Gin Fizz,5
+Gin Cooler,5
+Gin Rickey,1
+Gin Sling,5
+Gin Smash,2
+Gin Sour,2
+Gin Squirt,4
+Gin Swizzle,3
+Gluehwein,5
+Gin Toddy,4
+Godchild,2
+Godfather,4
+AT&T,2
+Golden dream,5
+Grass Skirt,1
+Grand Blue,4
+Grasshopper,3
+Green Goblin,2
+Greyhound,2
+Grim Reaper,1
+Grizzly Bear,5
+H.D.,3
+Halloween Punch,3
+Happy Skipper,3
+Harvey Wallbanger,5
+Havana Cocktail,3
+Hawaiian Cocktail,5
+Hemingway Special,3
+Herbal flame,4
+Highland Fling Cocktail,1
+Holloween Punch,3
+Homemade Kahlua,4
+Honey Bee,3
+Horse's Neck,5
+Hot Chocolate to Die for,5
+Hunter's Moon,5
+Hot Creamy Bush,3
+Ice Pick #1,4
+Iced Coffee,5
+Iced Coffee Fillip,5
+Imperial Fizz,3
+Imperial Cocktail,2
+Ipamena,1
+Irish Coffee,4
+Irish Cream,5
+Irish Curdling Cow,3
+Irish Russian,3
+Irish Spring,5
+Jack Rose Cocktail,3
+Jack's Vanilla Coke,2
+Jackhammer,4
+Jam Donut,4
+Jamaica Kiss,5
+Jamaican Coffee,4
+Japanese Fizz,2
+Jelly Bean,5
+Jello shots,3
+Jewel Of The Nile,2
+John Collins,3
+Just a Moonmint,1
+Jitterbug,1
+Lady Love Fizz,1
+Lassi - A South Indian Drink,4
+Lassi - Mango,2
+Lassi - Sweet,5
+Lassi Khara,2
+Lassi Raita,2
+Lemon Drop,5
+Lemon Shot,3
+Lemouroudji,1
+Limona Corona,3
+London Town,3
+Limeade,2
+Lone Tree Cocktail,1
+Loch Lomond,3
+Lone Tree Cooler,1
+Long Island Iced Tea,4
+Long Island Tea,1
+Lunch Box,4
+Mai Tai,4
+Long vodka,5
+Lord And Lady,2
+Malibu Twister,2
+Manhattan,2
+Margarita,1
+Martini,5
+Martinez 2,5
+Mary Pickford,2
+Masala Chai,5
+Melya,3
+Midnight Manx,5
+Miami Vice,3
+Midnight Mint,4
+Mimosa,2
+Mint Julep,3
+Mocha-Berry,5
+Mojito,4
+Godmother,4
+Monkey Gland,3
+Monkey Wrench,2
+Moscow Mule,3
+Moranguito,2
+ACID,3
+Mulled Wine,3
+Munich Mule,2
+Mother's Milk,4
+National Aquarium,1
+Negroni,2
+New York Sour,3
+New York Lemonade,3
+Oatmeal Cookie,1
+Old Fashioned,3
+Nutty Irishman,4
+Nuked Hot Chocolate,2
+Old Pal,3
+Orange Crush,1
+Orange Push-up,5
+Orange Oasis,3
+Orange Scented Hot Chocolate,4
+Orange Whip,3
+Orangeade,1
+Orgasm,5
+Oreo Mudslide,1
+Paloma,4
+Owen's Grandmother's Revenge,4
+Passion Fruit Martini,3
+Paradise,3
+Pegu Club,4
+Pina Colada,2
+Penicillin,1
+Pink Gin,4
+Pink Lady,5
+Pink Panty Pulldowns,5
+Pink Penocha,5
+Pisco Sour,2
+Pineapple Gingerale Smoothie,4
+Planter's Punch,5
+Popped cherry,5
+Poppy Cocktail,5
+Port Wine Cocktail,4
+Port Wine Flip,3
+Port And Starboard,5
+Pysch Vitamin Light,4
+Porto flip,2
+Quaker's Cocktail,2
+Quarter Deck Cocktail,3
+Mudslinger,1
+Queen Charlotte,5
+Mojito #3,4
+Quentin,4
+Quick F**K,2
+Quick-sand,1
+Radioactive Long Island Iced Tea,5
+Radler,3
+Rail Splitter,2
+Raspberry Cooler,5
+Red Snapper,3
+Rose,1
+Royal Bitch,5
+Rosemary Blue,1
+Royal Flush,5
+Royal Gin Fizz,2
+Royal Fizz,2
+Ruby Tuesday,3
+Rum Cobbler,2
+Rum Cooler,4
+Rum Milk Punch,3
+Rum Punch,1
+Rum Old-fashioned,1
+Rum Runner,5
+Rum Screwdriver,1
+Rum Sour,5
+Rum Toddy,4
+Russian Spring Punch,1
+Rusty Nail,1
+Valencia Cocktail,5
+Vampiro,1
+Vermouth Cassis,3
+Van Vleet,3
+Vesuvio,5
+Vesper,1
+Veteran,4
+Queen Bee,5
+Vodka And Tonic,1
+Victory Collins,3
+Vodka Fizz,2
+Vodka Martini,4
+Waikiki Beachcomber,1
+Vodka Russian,3
+Whisky Mac,4
+Whiskey Sour,4
+White Lady,5
+White Russian,3
+White Wine Sangria,2
+Wine Cooler,5
+Whitecap Margarita,2
+Wine Punch,5
+Yellow Bird,2
+Yoghurt Cooler,3
+Zambeer,1
+Zenmeister,2
+Ziemes Martini Apfelsaft,3
+Zima Blaster,4
+Zinger,5
+Zizi Coin-coin,4
+Zippy's Revenge,3
+Zoksel,1
+Zimadori Zinger,3
+Zombie,2
+Zorbatini,1
+Zorro,5

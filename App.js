@@ -10,6 +10,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Alcohol from './Alcohol.js';
+import PopularDrinks from './PopularDrinks.js';
+import RandomDrinks from './RandomDrinks.js';
 import Ingredients from './Ingredients.js';
 import ShowButton from './ShowButton.js';
 import DrinkPage from './DrinkPage.js';
@@ -25,23 +27,27 @@ class App extends React.Component {
 
     this.state = {
       page: 'home',
-      alcohol: 'whiskey',
+      alcohol: 'tequila',
       drinks: [],
       id: '',
       recipe: {},
       addingMixer: false,
-      mixer: '7-up',
+      mixer: 'triple_sec',
       noResults: false,
     };
     this.changeToDrinksPage = this.changeToDrinksPage.bind(this);
     this.changeToRecipePage = this.changeToRecipePage.bind(this);
     this.changeToHomePage = this.changeToHomePage.bind(this);
+    this.getPopularDrinks = this.getPopularDrinks.bind(this);
+    this.getRandomDrinks = this.getRandomDrinks.bind(this);
     this.selectAlcohol = this.selectAlcohol.bind(this);
     this.updateRecipe = this.updateRecipe.bind(this);
     this.backToDrinks = this.backToDrinks.bind(this);
     this.addingMixer = this.addingMixer.bind(this);
     this.selectMixer = this.selectMixer.bind(this);
   }
+
+  // =========== Page Change handlers ===========
 
   backToDrinks = () => {
     this.setState({
@@ -68,19 +74,37 @@ class App extends React.Component {
               drinks: drinks,
             });
           }
+          this.backToDrinks();
         })
         .catch((err) => {
+          this.setState({
+            noResults: true,
+          });
           console.log(err);
         });
     } else {
-      axios.get('http://127.0.0.1:3000', { params: { drink: this.state.alcohol } }).then((res) => {
-        const drinks = res.data;
-        this.setState({
-          drinks: drinks,
+      axios
+        .get('http://127.0.0.1:3000', { params: { drink: this.state.alcohol } })
+        .then((res) => {
+          const drinks = res.data;
+          if (typeof drinks !== 'object') {
+            this.setState({
+              noResults: true,
+            });
+          } else {
+            this.setState({
+              drinks: drinks,
+            });
+            this.backToDrinks();
+          }
+        })
+        .catch((err) => {
+          this.setState({
+            noResults: true,
+          });
+          console.log(err);
         });
-      });
     }
-    this.backToDrinks();
   };
 
   changeToHomePage = (e) => {
@@ -98,6 +122,48 @@ class App extends React.Component {
     });
   };
 
+  // ========= Get random drinks from api ===========
+
+  getRandomDrinks = () => {
+    axios
+      .get('http://127.0.0.1:3000/random')
+      .then((res) => {
+        const drinks = res.data;
+        this.setState({
+          drinks: drinks,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          noResults: true,
+        });
+      });
+    // ===== change to drinks page ======
+    this.backToDrinks();
+  };
+
+  // ========== Get Popular Drinks from api =========
+  getPopularDrinks = () => {
+    axios
+      .get('http://127.0.0.1:3000/popular')
+      .then((res) => {
+        const drinks = res.data;
+        this.setState({
+          drinks: drinks,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          noResults: true,
+        });
+      });
+    // ===== change to drinks page ======
+    this.backToDrinks();
+  };
+
+  // ======== Picker Selection Handlers ===============
   selectAlcohol = (itemValue) => {
     this.setState({
       alcohol: itemValue,
@@ -116,6 +182,7 @@ class App extends React.Component {
     });
   };
 
+  // ======== Sauce only or Mixer Mode =============
   addingMixer = () => {
     const { addingMixer } = this.state;
 
@@ -145,22 +212,34 @@ class App extends React.Component {
       if (page === 'home') {
         if (addingMixer) {
           currentPage = (
-            <ScrollView>
+            <ScrollView style={tailwind('bg-gray-800 flex-auto')}>
               <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
                 <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
                 <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
                 <Ingredients selectMixer={this.selectMixer} mixer={this.state.mixer} />
+              </View>
+              <View
+                style={tailwind('bg-gray-800 flex-auto flex-row content-start items-start w-full ')}
+              >
+                <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
+                <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
                 <ShowButton changePage={this.changeToDrinksPage} />
               </View>
             </ScrollView>
           );
         } else {
           currentPage = (
-            <ScrollView>
+            <ScrollView style={tailwind('bg-gray-800 flex-auto')}>
               <View style={tailwind('bg-gray-800  flex-auto content-center items-center')}>
                 <Text style={tailwind('mt-10 text-6xl text-yellow-500 ')}>Bottoms Up!</Text>
                 <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+              </View>
+              <View
+                style={tailwind('bg-gray-800 flex-auto flex-row content-start items-start w-full ')}
+              >
                 <AddMixer addingMixer={this.addingMixer} />
+                <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
+                <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
                 <ShowButton changePage={this.changeToDrinksPage} />
               </View>
             </ScrollView>
