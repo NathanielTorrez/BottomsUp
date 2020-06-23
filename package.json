@@ -9,13 +9,15 @@
     "express": "nodemon server/index.js"
   },
   "dependencies": {
-    "@react-native-community/picker": "^1.6.1",
+    "@react-native-community/picker": "^1.6.5",
     "@react-native-community/slider": "^3.0.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "expo": "~37.0.3",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "logkitty": "^0.7.1",
+    "mem": "^6.1.0",
     "nodemon": "^2.0.4",
     "pg": "^8.2.1",
     "prettier": "^2.0.5",
