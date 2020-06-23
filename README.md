@@ -7,3 +7,15 @@ Turn yourself into an expert bar tender with endless ideas with just a touch of 
 > 3. npm start || npm run --ios || npm run --android
 > 4. if running locally change servers port and client http appropriately 
 > 5. npm run express
+
+# How it works 
+> The app's base functionality is to recieve an input from the user for alcoholic or non-
+> alcoholic ingredients. It then queries the cocktailDB for drinks and recipes that contain
+> these ingredients.
+>
+> The app is a multi-page view service that will naturally progress you through a pleasant and
+> fun UI. It also features functionality to generate a list of random drinks for parties or it 
+> can supply a list of the most popular drinks!
+
+# Demo !
+<iframe src="https://giphy.com/embed/iFnIzWLxYoxSeGiLH8" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/iFnIzWLxYoxSeGiLH8">via GIPHY</a></p>
