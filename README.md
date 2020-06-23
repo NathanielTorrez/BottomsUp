@@ -18,5 +18,5 @@ Turn yourself into an expert bar tender with endless ideas with just a touch of 
 > can supply a list of the most popular drinks!
 
 # Demo !
-![Demo](https://giphy.com/gifs/iFnIzWLxYoxSeGiLH8)
+![Demo](https://media.giphy.com/media/iFnIzWLxYoxSeGiLH8/giphy.gif)
 
