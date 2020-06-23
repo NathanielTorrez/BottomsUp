@@ -18,4 +18,5 @@ Turn yourself into an expert bar tender with endless ideas with just a touch of 
 > can supply a list of the most popular drinks!
 
 # Demo !
-<iframe src="https://giphy.com/embed/iFnIzWLxYoxSeGiLH8" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/iFnIzWLxYoxSeGiLH8">via GIPHY</a></p>
+![Demo](https://giphy.com/gifs/iFnIzWLxYoxSeGiLH8)
+
