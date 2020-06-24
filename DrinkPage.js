@@ -4,7 +4,7 @@ import tailwind from 'tailwind-rn';
 import Entry from './Entry.js';
 
 function DrinkPage({ drinks, changeToHomePage, changeToRecipePage, updateRecipe, backTodrinks }) {
-  if (drinks.length < 1) {
+  if (drinks.length < 1 || drinks === undefined) {
     return <View></View>;
   } else {
     return (

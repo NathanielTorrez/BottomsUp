@@ -66,32 +66,34 @@ class App extends React.Component {
         })
         .then((res) => {
           const drinks = res.data;
-          if (typeof drinks !== 'object') {
+          if (Array.isArray(drinks) !== true) {
             this.setState({
-              drinks: drinks,
               noResults: true,
+              page: 'NoResults',
             });
           } else {
             this.setState({
               drinks: drinks,
             });
+
+            this.backToDrinks();
           }
-          this.backToDrinks();
         })
         .catch((err) => {
           this.setState({
             noResults: true,
+            page: 'NoResults',
           });
-          console.log(err);
         });
     } else {
       axios
         .get('http://50.18.218.159:3000', { params: { drink: this.state.alcohol } })
         .then((res) => {
           const drinks = res.data;
-          if (typeof drinks !== 'object') {
+          if (Array.isArray(drinks) !== true) {
             this.setState({
               noResults: true,
+              page: 'NoResults',
             });
           } else {
             this.setState({
@@ -103,6 +105,7 @@ class App extends React.Component {
         .catch((err) => {
           this.setState({
             noResults: true,
+            page: 'NoResults',
           });
           console.log(err);
         });
@@ -139,6 +142,7 @@ class App extends React.Component {
         console.log(err);
         this.setState({
           noResults: true,
+          page: 'NoResults',
         });
       });
     // ===== change to drinks page ======
@@ -159,6 +163,7 @@ class App extends React.Component {
         console.log(err);
         this.setState({
           noResults: true,
+          page: 'NoResults',
         });
       });
     // ===== change to drinks page ======
@@ -204,84 +209,79 @@ class App extends React.Component {
     let { addingMixer } = this.state;
     let currentPage;
 
-    if (this.state.noResults) {
+    if (page === 'NoResults') {
       currentPage = (
         <View style={tailwind('bg-gray-200 flex-auto content-center text-center items-center')}>
           <NoResults changeToHomePage={this.changeToHomePage} />
         </View>
       );
-    } else {
-      if (page === 'home') {
-        if (addingMixer) {
-          currentPage = (
-            <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
-              <View style={tailwind('bg-orange-200  flex-auto content-center items-center')}>
-                <Text style={tailwind('mt-10 text-6xl text-orange-500 underline ')}>
-                  Bottoms Up!
-                </Text>
-                <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
-                <Ingredients selectMixer={this.selectMixer} mixer={this.state.mixer} />
-              </View>
-              <View
-                style={tailwind(
-                  'bg-orange-200 flex-auto justify-center flex-row content-start items-start w-full '
-                )}
-              >
-                <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
-                <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
-                <ShowButton changePage={this.changeToDrinksPage} />
-              </View>
-            </ScrollView>
-          );
-        } else {
-          currentPage = (
-            <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
-              <View style={tailwind('bg-orange-200  flex-auto content-center items-center')}>
-                <Text style={tailwind('mt-10 text-6xl text-orange-500 underline')}>
-                  Bottoms Up!
-                </Text>
-                <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
-              </View>
-              <View
-                style={tailwind(
-                  'bg-orange-200 flex-auto justify-center flex-row content-center items-center'
-                )}
-              >
-                <AddMixer addingMixer={this.addingMixer} />
-                <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
-                <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
-                <ShowButton changePage={this.changeToDrinksPage} />
-              </View>
-            </ScrollView>
-          );
-        }
-      } else if (page === 'drinks') {
+    } else if (page === 'home') {
+      if (addingMixer) {
         currentPage = (
           <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
-            <DrinkPage
-              alcohol={this.state.alcohol}
-              drinks={this.state.drinks}
-              changeToHomePage={this.changeToHomePage}
-              changeToRecipePage={this.changeToRecipePage}
-              updateRecipe={this.updateRecipe}
-            />
+            <View style={tailwind('bg-orange-200 flex-auto content-center items-center')}>
+              <Text style={tailwind('mt-10 text-6xl text-orange-500 underline')}>Bottoms Up!</Text>
+              <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+              <Ingredients selectMixer={this.selectMixer} mixer={this.state.mixer} />
+            </View>
+            <View
+              style={tailwind(
+                'bg-orange-200 flex-auto justify-center flex-row content-start items-start w-full'
+              )}
+            >
+              <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
+              <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
+              <ShowButton changePage={this.changeToDrinksPage} />
+            </View>
           </ScrollView>
         );
-      } else if (page === 'recipe') {
+      } else {
         currentPage = (
-          <View style={tailwind('bg-orange-500 flex-auto')}>
-            <Recipe
-              backToDrinks={this.backToDrinks}
-              instructions={this.state.recipe.instructions}
-              measurements={this.state.recipe.measurements}
-              ingredients={this.state.recipe.ingredients}
-              image={this.state.recipe.image}
-              name={this.state.recipe.name}
-            />
-          </View>
+          <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
+            <View style={tailwind('bg-orange-200 flex-auto content-center items-center')}>
+              <Text style={tailwind('mt-10 text-6xl text-orange-500 underline')}>Bottoms Up!</Text>
+              <Alcohol alcohol={this.state.alcohol} selectAlcohol={this.selectAlcohol} />
+            </View>
+            <View
+              style={tailwind(
+                'bg-orange-200 flex-auto justify-center flex-row content-center items-center'
+              )}
+            >
+              <AddMixer addingMixer={this.addingMixer} />
+              <RandomDrinks getRandomDrinks={this.getRandomDrinks} />
+              <PopularDrinks getPopularDrinks={this.getPopularDrinks} />
+              <ShowButton changePage={this.changeToDrinksPage} />
+            </View>
+          </ScrollView>
         );
       }
+    } else if (page === 'drinks') {
+      currentPage = (
+        <ScrollView style={tailwind('bg-orange-200 flex-auto')}>
+          <DrinkPage
+            alcohol={this.state.alcohol}
+            drinks={this.state.drinks}
+            changeToHomePage={this.changeToHomePage}
+            changeToRecipePage={this.changeToRecipePage}
+            updateRecipe={this.updateRecipe}
+          />
+        </ScrollView>
+      );
+    } else if (page === 'recipe') {
+      currentPage = (
+        <View style={tailwind('bg-orange-500 flex-auto')}>
+          <Recipe
+            backToDrinks={this.backToDrinks}
+            instructions={this.state.recipe.instructions}
+            measurements={this.state.recipe.measurements}
+            ingredients={this.state.recipe.ingredients}
+            image={this.state.recipe.image}
+            name={this.state.recipe.name}
+          />
+        </View>
+      );
     }
+
     return currentPage;
   }
 }
