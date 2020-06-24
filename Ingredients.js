@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Picker } from 'react-native';
 import tailwind from 'tailwind-rn';
+console.error = (error) => error.apply;
 
 function Ingredients({ selectMixer, mixer }) {
   let ingredientList = [

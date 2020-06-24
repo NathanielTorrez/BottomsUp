@@ -2,9 +2,9 @@
 const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
+const db = require('../database/index.js');
 const app = express();
 const port = 3000;
-const db = require('../database/index.js');
 
 // =================== MiddleWare =========================
 app.use(bodyParser.json());
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
       let filteredDrinks = [];
       drinks.map((drink) => {
         let name = drink.strDrink;
-
+        // ========================== Remove inappropriate phrases ====================
         if (
           name.includes('sex') ||
           name.includes('Asshole') ||
@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
       res.send(drinks);
     })
     .catch((err) => {
-      console.log('error');
       res.send(err);
     });
 });
@@ -86,7 +85,7 @@ app.get('/mixer', (req, res) => {
       let filteredDrinks = [];
       drinks.map((drink) => {
         let name = drink.strDrink;
-
+        // ========================== Remove inappropriate phrases ====================
         if (
           name.includes('sex') ||
           name.includes('Asshole') ||
@@ -97,12 +96,10 @@ app.get('/mixer', (req, res) => {
           filteredDrinks.push(drink);
         }
       });
-      console.log(drinks);
       res.status(200);
       res.send(drinks);
     })
     .catch((err) => {
-      console.log('error');
       res.send(err);
     });
 });
@@ -117,7 +114,7 @@ app.get('/random', (req, res) => {
       let filteredDrinks = [];
       drinks.map((drink) => {
         let name = drink.strDrink;
-
+        // ========================== Remove inappropriate phrases ====================
         if (
           name.includes('sex') ||
           name.includes('Asshole') ||
@@ -129,11 +126,9 @@ app.get('/random', (req, res) => {
         }
       });
       res.status(200);
-      console.log(filteredDrinks);
       res.send(filteredDrinks);
     })
     .catch((err) => {
-      console.log(err);
       res.send(err);
     });
 });
@@ -149,7 +144,7 @@ app.get('/popular', (req, res) => {
       let filteredDrinks = [];
       drinks.map((drink) => {
         let name = drink.strDrink;
-
+        // ========================== Remove inappropriate phrases ====================
         if (
           name.includes('sex') ||
           name.includes('Asshole') ||
@@ -161,11 +156,9 @@ app.get('/popular', (req, res) => {
         }
       });
       res.status(200);
-      console.log(filteredDrinks);
       res.send(filteredDrinks);
     })
     .catch((err) => {
-      console.log(err);
       res.send(err);
     });
 });
